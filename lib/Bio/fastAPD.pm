@@ -18,7 +18,7 @@ Bio::fastAPD -- rapid calculation of average pairwise difference (APD) for multi
 
 =head1 VERSION
 
-Version 1.00
+Version 1.01
 
 =head1 SYNOPSIS
 
@@ -205,7 +205,7 @@ use strict;
 use warnings;
 use Carp;
 use 5.8.8;
-our $VERSION = '1.0';
+our $VERSION = '1.01';
 
 # ----------------------------------------
 # symbols & matrices

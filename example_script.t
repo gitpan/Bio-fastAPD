@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# example_script.pl - intended for demonstrating the use of the fastAPD perl module
+# example_script.t - intended for demonstrating the use of the fastAPD perl module
 # Author - Joseph D. Baugher, PhD
 # Copyright (c) 2014 Joseph D. Baugher (<jbaughe2@jhmi.edu>). All rights reserved.
 #
@@ -15,7 +15,7 @@ use warnings;
 use strict;
 use Cwd 'abs_path';
 use File::Basename;
-use fastAPD;
+use Bio::fastAPD;
 
 my $file_name = "example_data.fasta";
 

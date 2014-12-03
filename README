@@ -1,4 +1,4 @@
-Bio::fastAPD v1.00
+Bio::fastAPD v1.01
 
 The Bio::fastAPD module provides computationally efficient methods for the calculation of 
 average pairwise difference (APD), a measure of nucleotide diversity, from multiple 
