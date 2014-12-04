@@ -14,15 +14,15 @@ use warnings;
 use strict;
 use Test::More tests => 44;
 use lib '../lib';
-use fastAPD;
+use Bio::fastAPD;
  
  
 my $test_dir = "t//test_data//"; 
  
-my $fastAPD_obj = fastAPD->new();
+my $fastAPD_obj = Bio::fastAPD->new();
 
 ok( defined $fastAPD_obj, 'new() returned an object' );
-ok( $fastAPD_obj->isa('fastAPD'), 'it is a fastAPD object' ); 
+ok($fastAPD_obj->isa('Bio::fastAPD'), 'it is a Bio::fastAPD object' ); 
 
 my $file_name = $test_dir . "dna_equal_length.fasta";
 ok(-r $file_name,'can read files');
@@ -62,7 +62,7 @@ is(round($fastapd_se), round($apdbypos_se), 'standard error results match');
  
 ################# Masking
  
- my $fastAPD_obj2 = fastAPD->new();
+ my $fastAPD_obj2 = Bio::fastAPD->new();
 
 # Create a binary mask instructing the module to ignore the first and last positions
 my $mask = join("", 0, 1 x (length($$sequences_ref[0])-2), 0);    
@@ -85,7 +85,7 @@ is_deeply($valid_pos_ref, [(1..298)], 'masking');
 
 ################# Symbol frequencies
 
-my $fastAPD_obj3 = fastAPD->new();
+my $fastAPD_obj3 = Bio::fastAPD->new();
 $sequences_ref = create_seq_array($test_dir . "freq.fasta");
 $fastAPD_obj3->initialize(seq_array_ref => $sequences_ref,
                           alphabet      => 'dna');
@@ -144,7 +144,7 @@ is($observed_consensus, 'ACTGACTGAC', 'consensus sequence');
 
 ################# Gap comparison options
 
-my $fastAPD_obj4 = fastAPD->new();
+my $fastAPD_obj4 = Bio::fastAPD->new();
 $sequences_ref = create_seq_array($test_dir . "gap_test.fasta");
 
 $fastAPD_obj4->initialize(seq_array_ref => $sequences_ref,
@@ -232,7 +232,7 @@ foreach my $test_scenario (@testing_array) {
     my $expected_apd = $$test_scenario[2];
     my $expected_se  = $$test_scenario[3];
     
-    my $fastAPD_obj = fastAPD->new();
+    my $fastAPD_obj = Bio::fastAPD->new();
 
     my $sequences_ref = create_seq_array($file_name);        
     ok($fastAPD_obj->initialize(seq_array_ref => $sequences_ref,

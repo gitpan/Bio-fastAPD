@@ -23,7 +23,7 @@ my $file_name = "example_data.fasta";
 my $sequences_ref = create_seq_array($file_name);     
 
 ### Create and initialize a new fastAPD object    
-my $fastAPD_obj = fastAPD->new();
+my $fastAPD_obj = Bio::fastAPD->new();
 $fastAPD_obj->initialize(seq_array_ref => $sequences_ref,
                          alphabet      => 'dna');
 

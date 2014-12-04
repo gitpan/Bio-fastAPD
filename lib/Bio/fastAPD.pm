@@ -18,7 +18,7 @@ Bio::fastAPD -- rapid calculation of average pairwise difference (APD) for multi
 
 =head1 VERSION
 
-Version 1.01
+Version 1.02
 
 =head1 SYNOPSIS
 
@@ -41,7 +41,7 @@ Version 1.01
     }
     if ($curr_seq) { push(@sequences, $curr_seq) }       
     
-    my $fastAPD_obj = fastAPD->new();
+    my $fastAPD_obj = Bio::fastAPD->new();
     $fastAPD_obj->initialize(seq_array_ref => \@sequences,
                              alphabet      => 'dna');
 
@@ -72,7 +72,7 @@ Version 1.01
     my @sequences;  
     foreach my $seq_obj ($aln_obj->each_seq) { push(@sequences, $seq_obj->seq()) }
         
-    my $fastAPD_obj = fastAPD->new();
+    my $fastAPD_obj = Bio::fastAPD->new();
     $fastAPD_obj->initialize(seq_array_ref => \@sequences,
                              alphabet      => 'dna');
         
@@ -99,7 +99,7 @@ available in an upcoming peer-reviewed journal article.
  
 =head1 CONSTRUCTOR
 
-    my $fastAPD_obj = fastAPD->new();
+    my $fastAPD_obj = Bio::fastAPD->new();
 
 =head1 INITIALIZER
 
@@ -153,11 +153,11 @@ Additional info in the Appendix.
 
         # Get the number of reads
 
-    n_valid_positions
+    fastAPD_obj->n_valid_positions()
 
         # Get the number of positions in the alignment which meet the analysis criteria
            
-    valid_positions
+    fastAPD_obj->valid_positions()
 
         # Get the positions in the alignment which meet the analysis criteria
 
@@ -195,7 +195,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 =head1 APPENDIX
 
-The following documentation describes the fastAPD module implementation.
+The following documentation describes the Bio::fastAPD module implementation.
 
 =cut
 
@@ -205,7 +205,7 @@ use strict;
 use warnings;
 use Carp;
 use 5.8.8;
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # ----------------------------------------
 # symbols & matrices
@@ -257,8 +257,8 @@ my %_options=();
 B<new>
 
  Title   : new
- Usage   : $fastAPD_obj->new();
- Function: Creates a fastAPD object
+ Usage   : my $fastAPD_obj = Bio::fastAPD->new()
+ Function: Creates a Bio::fastAPD object
  Returns : A blessed reference
  Args    : No arguments
 
@@ -288,7 +288,7 @@ B<initialize>
  Usage   : $fastAPD_obj->initialize(seq_ref  => \@sequences,
                                     alphabet => 'dna',
                                     mask     => $mask);
- Function: Initializes a fastAPD object.
+ Function: Initializes a Bio::fastAPD object.
               1. Initializes internal variables. 
               2. Prepares sequence reads for analysis. 
               3. Counts symbol frequencies.
@@ -791,7 +791,6 @@ sub _create_alpha_mask {
     }
     elsif($_comparison_type eq 'gap_gap') {
         @_alpha_mask{$_gap, $_null, $_end} = (1,0,0);
-        # test this
     }
     elsif($_comparison_type eq 'complete_del') {
         $_gap_threshold  = 0;
