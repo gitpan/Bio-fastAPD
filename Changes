@@ -1,7 +1,9 @@
 Revision history for Bio::fastAPD
 
+1.04	12/08/2014
+	Adjusted test.t for new output from freqs().
 1.03	12/08/2014
-	Fixed namespace in 00-load.t.
+	Fixed namespace in 00-load.t and altered output format of freqs() in fastAPD.pm.
 1.02    12/04/2014
         Propagated new namespace throughout module (Changed fastAPD to Bio::fastAPD).
 1.01    12/03/2014

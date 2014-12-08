@@ -18,7 +18,7 @@ Bio::fastAPD -- rapid calculation of average pairwise difference (APD) for multi
 
 =head1 VERSION
 
-Version 1.02
+Version 1.04
 
 =head1 SYNOPSIS
 
@@ -205,7 +205,7 @@ use strict;
 use warnings;
 use Carp;
 use 5.8.8;
-our $VERSION = '1.02';
+our $VERSION = '1.04';
 
 # ----------------------------------------
 # symbols & matrices
@@ -1026,7 +1026,7 @@ B<freqs>
 sub freqs {
     my $self=shift;
     my (@freq_array, @_curr_freqs);
-    push(@freq_array, join("",@_alphabet));
+    push(@freq_array, join("\t",@_alphabet));
     
     for (my $pos = 0; $pos < $_W; $pos++){
         foreach my $symbol (@_alphabet) {

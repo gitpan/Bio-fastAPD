@@ -92,8 +92,17 @@ $fastAPD_obj3->initialize(seq_array_ref => $sequences_ref,
 
 my $freq_array_ref = $fastAPD_obj3->freqs();
 my $freq_string =  "@$freq_array_ref";
-my $expected_freqs =  '#-ACGNT 0040000 0004000 0200002 0000400 0020020 ' . 
-                       '0004000 0000004 1000300 2020000 2002000';
+my $expected_freqs =  join(" ", join("\t",qw/# - A C G N T/),
+                                join("\t",qw/0 0 4 0 0 0 0/),
+                                join("\t",qw/0 0 0 4 0 0 0/),
+                                join("\t",qw/0 2 0 0 0 0 2/),
+                                join("\t",qw/0 0 0 0 4 0 0/),
+                                join("\t",qw/0 0 2 0 0 2 0/),
+                                join("\t",qw/0 0 0 4 0 0 0/),
+                                join("\t",qw/0 0 0 0 0 0 4/),
+                                join("\t",qw/1 0 0 0 3 0 0/),
+                                join("\t",qw/2 0 2 0 0 0 0/),
+                                join("\t",qw/2 0 0 2 0 0 0/));
 is($freq_string, $expected_freqs, 'Symbol frequencies test');
 
 
