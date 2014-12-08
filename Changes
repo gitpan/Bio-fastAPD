@@ -1,5 +1,7 @@
 Revision history for Bio::fastAPD
 
+1.05	12/08/2014
+	Included inc/Module/Install.
 1.04	12/08/2014
 	Adjusted test.t for new output from freqs().
 1.03	12/08/2014

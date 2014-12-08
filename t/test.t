@@ -16,7 +16,8 @@ use Test::More tests => 44;
 use lib '../lib';
 use Bio::fastAPD;
  
- 
+no warnings qw{qw uninitialized}; 
+
 my $test_dir = "t//test_data//"; 
  
 my $fastAPD_obj = Bio::fastAPD->new();
