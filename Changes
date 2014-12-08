@@ -1,5 +1,7 @@
 Revision history for Bio::fastAPD
 
+1.03	12/08/2014
+	Fixed namespace in 00-load.t.
 1.02    12/04/2014
         Propagated new namespace throughout module (Changed fastAPD to Bio::fastAPD).
 1.01    12/03/2014

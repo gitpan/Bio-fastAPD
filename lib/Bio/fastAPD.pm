@@ -1032,7 +1032,7 @@ sub freqs {
         foreach my $symbol (@_alphabet) {
             push(@_curr_freqs, $_freq[$pos]{$symbol});
         }
-        push(@freq_array, join("",@_curr_freqs));
+        push(@freq_array, join("\t", @_curr_freqs));
         @_curr_freqs = ();
     }
     return \@freq_array;
