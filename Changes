@@ -1,5 +1,7 @@
 Revision history for Bio::fastAPD
 
+1.06    12/09/2014
+        Removed developer tests.
 1.05	12/08/2014
 	Included inc/Module/Install.
 1.04	12/08/2014

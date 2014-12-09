@@ -14,12 +14,9 @@ inc/Module/Install/WriteAll.pm
 inc/Module/Install.pm
 lib/Bio/fastAPD.pm
 Makefile.PL
-MANIFEST			This list of files
+MANIFEST
 README
 t/00-load.t
-t/manifest.t
-t/pod-coverage.t
-t/pod.t
 t/test.t
 t/test_data/dna_equal_length.fasta
 t/test_data/freq.fasta
