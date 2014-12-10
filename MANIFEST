@@ -13,8 +13,11 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 inc/Module/Install.pm
 lib/Bio/fastAPD.pm
+LICENSE
 Makefile.PL
 MANIFEST
+MYMETA.json
+MYMETA.yml
 README
 t/00-load.t
 t/test.t

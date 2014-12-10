@@ -1,5 +1,7 @@
 Revision history for Bio::fastAPD
 
+1.07	12/10/2014
+	Added LICENSE file, as well as MYMETA.json and MYMETA.yml.
 1.06    12/09/2014
         Removed developer tests.
 1.05	12/08/2014
